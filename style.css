@@ -1,0 +1,14 @@
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  background-color: #2f64f7;
+  border-bottom: 24px solid #e4b829;
+  min-height: 300px;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
