@@ -135,8 +135,8 @@ nav a {
 
 .Interests-Item{
   display: flex;
-  flex-direction: column; /* Lägger titeln OVANFÖR bilden */
-  align-items: center;    /* Centrerar titeln och bilden horisontellt */
+  flex-direction: column; 
+  align-items: center;    
   text-align: center;
   min-width: 0;
 }
@@ -182,7 +182,7 @@ nav a {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
