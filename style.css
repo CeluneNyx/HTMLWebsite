@@ -6,7 +6,6 @@ body {
 
 header {
   background-color: #2f64f7;
-  border-bottom: 24px solid #e4b829;
   min-height: 300px;
   padding: 32px;
   box-sizing: border-box;
@@ -17,10 +16,27 @@ header {
   align-items: center;
 }
 
-header h1 {
+h1 {
   color: #ffffff;
   text-align: center;
   margin: 0;
   font-size: clamp(2.5rem, 7.5vw, 6.5rem);
   white-space: nowrap;
+}
+
+nav {
+  background-color: #e4b829;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: #2f64f7;
+  text-decoration: none;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0px 16px;
 }
