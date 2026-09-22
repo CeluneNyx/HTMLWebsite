@@ -271,13 +271,18 @@ nav a {
 .Footer-Content{
   border-top: 16px solid #e4b829;
   background-color: #2f64f7;
-  min-height: 400px;
+  min-height: 200px;
   padding: 32px;
   box-sizing: border-box;
   width: 100%;
   color: #ffffff;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.Footer-Content a{
+  color:#e4b829;
 }
