@@ -9,10 +9,12 @@
 </head>
 
 <body>
+    <!--Title-->
     <header>
         <h1>My Portfolio Profile</h1>
     </header>
 
+    <!--Navigation linked to page section with the exception of LinkedIn which leads to my LinkedIn Profile (Requires user to be logged in to LinkedIn)-->
     <nav>
         <a href="#about">About me</a>
         <a href="#interests">Interests</a>
@@ -25,6 +27,7 @@
         <div class="About-Me" id="about">
             <h2>About Me</h2>
             <div class="About-Me-Content">
+                <!--Not a massive fan of taking pictures of myself so you get my cat instead-->
                 <img src="Images/Cat.jpg" alt="The cutest cat" width="25%" height="25%">
                 <div class="About-Me-Text">
                     <div class="About-Me-Description">
@@ -34,6 +37,7 @@
                             There was this one time that I went off road biking and managed to find an abandoned quarry in the middle of the woods!
                         </p>
                     </div>
+                    <!--A 4x2 grid showing what Programming languages i know-->
                     <div class="text-grid">
                         <div class="text-grid-item">
                             <p>Languages I know:</p>
@@ -66,12 +70,13 @@
         <div class="Interests" id="interests">
             <h2>My Interests</h2>
             <div class="Interests-Content">
+                <!--Flip card created by using tutorial here: https://www.w3schools.com/howto/howto_css_flip_card.asp -->
                 <div class="Interests-Item">
                     <h3>Space</h3>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Images/Space.jpg">
+                                <img src="Images/Space.jpg" alt="Rocket ship at Kennedy Space Centre">
                             </div>
                             <div class="flip-card-back">
                                 <h1>Space</h1>
@@ -102,7 +107,7 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Images/Photography.jpg">
+                                <img src="Images/Photography.jpg" alt="Empty Street within Visby's walls">
                             </div>
                             <div class="flip-card-back">
                                 <h1>Photography</h1>
@@ -133,7 +138,7 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Images/Travel.jpg">
+                                <img src="Images/Travel.jpg" alt="Tall Tower inside Disneyland Epcot">
                             </div>
                             <div class="flip-card-back">
                                 <h1>Travel</h1>
@@ -170,6 +175,7 @@
         </div>
         <div class="Contact-Me" id="contact">
             <h2>Contact Me</h2>
+            <!--Simple Form that sends it to my secondary mail if Backend gets created :D-->
             <form class="Contact-Form" action="mailto:i.use.this.to.help@gmail.com" method="post" enctype="text/plain">
                 <div class="Form-Group">
                     <label for="name">Name:</label>

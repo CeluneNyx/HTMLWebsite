@@ -1,9 +1,17 @@
-
+/*Start of General CSS*/
 body {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+/*End of General CSS*/
+
+/*Start of Header CSS*/
 header {
   background-color: #2f64f7;
   min-height: 400px;
@@ -21,14 +29,18 @@ h1 {
   text-align: center;
   margin: 0;
   font-size: clamp(4rem,  15vw, 9rem);
-  white-space: nowrap;
+  line-height: 1.05;
 }
+/*End of Header CSS*/
 
+/*Start of Navigation CSS*/
 nav {
   background-color: #e4b829;
   padding: 24px;
   box-sizing: border-box;
   width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
 
   display: flex;
   justify-content: center;
@@ -37,10 +49,12 @@ nav {
 nav a {
   color: #2f64f7;
   text-decoration: underline;
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin: 0px 3%;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0;
 }
+/*End of Header CSS*/
 
+/*Start of About Me CSS*/
 .About-Me h2{
   font-size: clamp(2rem,  5vw, 3rem);
   padding: 8px;
@@ -54,17 +68,17 @@ nav a {
 }
 
 .About-Me img {
-  display: flex;
-  justify-content: flex-start;
+  display: block;
   margin-left: 5%;
+  width: min(25%, 280px);
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .About-Me-Description {
-  display: flex;
-  justify-content: flex-end;
-  font-size: clamp(1rem,  5vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.35rem);
   padding: 8px;
   box-sizing: border-box;
   width: 95%;
@@ -92,10 +106,13 @@ nav a {
 
 .text-grid-item{
   text-align: left;
-    font-size: clamp(1rem,  5vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  padding: 0.5rem;
   border: 1px solid #000000;
 }
+/*End of About Me CSS*/
 
+/*Start of Interests CSS*/
 .Interests h2{
   font-size: clamp(2rem,  5vw, 3rem);
   padding: 8px;
@@ -111,9 +128,9 @@ nav a {
 
 .Interests-Content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 5%;
 }
 
 .Interests-Item{
@@ -121,12 +138,13 @@ nav a {
   flex-direction: column; /* Lägger titeln OVANFÖR bilden */
   align-items: center;    /* Centrerar titeln och bilden horisontellt */
   text-align: center;
+  min-width: 0;
 }
 
 .Interests-Item img {
-  width: 80%;
-  Height: 80%;
+  width: 100%;
   height: auto;
+  display: block;
   border-radius: 8px;
 }
 
@@ -183,12 +201,14 @@ nav a {
 }
 
 .flip-card-back p {
-  font-size: clamp(1rem,  5vw, 2rem);
-  padding: 8px;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  padding: 0 1rem;
   box-sizing: border-box;
   width: 100%;
 }
+/*End of Interests CSS*/
 
+/*Start of Goals CSS*/
 .Goals h2{
   font-size: clamp(2rem,  5vw, 3rem);
   padding: 8px;
@@ -203,9 +223,12 @@ nav a {
 }
 
 .Goals p{
-  font-size: clamp(1rem,  5vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  padding: 0 5%;
 }
+/*End of Goals CSS*/
 
+/*Start of Contact Me CSS*/
 .Contact-Me h2{
     font-size: clamp(2rem,  5vw, 3rem);
     padding: 8px;
@@ -251,6 +274,17 @@ nav a {
   transition: border-color 0.2s ease;
 }
 
+.Form-Group textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
 .Submit-Button {
   width: 100%;
   padding: 0.85rem;
@@ -267,7 +301,9 @@ nav a {
 .Submit-Button:hover {
   background-color: #1e4bd8;
 }
+/*End of Contact Me CSS*/
 
+/*Start of Footer CSS*/
 .Footer-Content{
   border-top: 16px solid #e4b829;
   background-color: #2f64f7;
@@ -286,3 +322,68 @@ nav a {
 .Footer-Content a{
   color:#e4b829;
 }
+/*End of Footer CSS*/
+
+/*Start of Restricted Media CSS*/
+@media (max-width: 700px) {
+  header {
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 14vw, 5rem);
+  }
+
+  nav {
+    padding: 1rem;
+    gap: 0.75rem 1rem;
+  }
+
+  .About-Me-Content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+  }
+
+  .About-Me img {
+    width: min(60vw, 220px);
+    margin-left: 0;
+  }
+
+  .About-Me-Description,
+  .Goals p {
+    width: 100%;
+    padding: 0;
+  }
+
+  .text-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .About-Me-Text {
+    width: 100%;
+  }
+
+  .flip-card {
+    aspect-ratio: 157 / 260;
+  }
+
+  .flip-card-back h1 {
+    font-size: 1.5rem;
+  }
+
+  .flip-card-back p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+  }
+
+  .Contact-Form {
+    padding: 1rem;
+  }
+
+  .Form-Group label {
+    font-size: 1.25rem;
+  }
+}
+/*End of Restricted Media CSS*/
