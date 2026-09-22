@@ -170,14 +170,31 @@
         </div>
         <div class="Contact-Me" id="contact">
             <h2>Contact Me</h2>
-            <p>Add your contact me form.</p>
+            <form class="Contact-Form" action="mailto:i.use.this.to.help@gmail.com" method="post" enctype="text/plain">
+                <div class="Form-Group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name" placeholder="Your name" required>
+                </div>
+
+                <div class="Form-Group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="Email" placeholder="John.Doe@gmail.com" required>
+                </div>
+
+                <div class="Form-Group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="Message" rows="10" placeholder="Write your message here" required></textarea>
+                </div>
+
+                <button type="submit" class="Submit-Button">Submit</button>
+            </form>
         </div>
     </main>
 
     <footer>
         <div class="Footer-Content">
             <div class="Phone-Number">
-                <p>Phone: 070-123 45 67</p>
+                <p>Phone number: 070-123 45 67</p>
             </div>
             <div class="Copywrite">
                 <p>&copy; 2026 Andreas Persson Company. All rights reserved.</p>

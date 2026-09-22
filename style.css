@@ -201,3 +201,83 @@ nav a {
   justify-content: center;
   align-items: center;
 }
+
+.Goals p{
+  font-size: clamp(1rem,  5vw, 2rem);
+}
+
+.Contact-Me h2{
+    font-size: clamp(2rem,  5vw, 3rem);
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contact-Form {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.Form-Group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Form-Group label {
+  font-size: clamp(2rem,  5vw, 3rem);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.Form-Group input{
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.Submit-Button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #2f64f7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Submit-Button:hover {
+  background-color: #1e4bd8;
+}
+
+.Footer-Content{
+  border-top: 16px solid #e4b829;
+  background-color: #2f64f7;
+  min-height: 400px;
+  padding: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
