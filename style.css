@@ -95,3 +95,42 @@ nav a {
     font-size: clamp(1rem,  5vw, 2rem);
   border: 1px solid #000000;
 }
+
+.Interests h2{
+  font-size: clamp(2rem,  5vw, 3rem);
+  padding: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Interests-Content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.Interests-Item{
+  display: flex;
+  flex-direction: column; /* Lägger titeln OVANFÖR bilden */
+  align-items: center;    /* Centrerar titeln och bilden horisontellt */
+  text-align: center;
+}
+
+.Interests-Item img {
+  width: 80%;
+  Height: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.Interests-Item h3 {
+  font-size: clamp(1rem,  5vw, 2rem);
+  margin-top: 0.5rem;
+}
