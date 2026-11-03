@@ -29,3 +29,11 @@ function validateTopic() {
 
     return true;
 }
+
+function validateComments() {
+    const comments = document.getElementById("comments");
+    if(comments.value.length < 15){
+        return false;
+    }
+    return true;
+}
