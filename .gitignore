@@ -1,0 +1,13 @@
+#Unsure what to put in here so i just put some stuff that usually is in .gitignore files
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Logs
+*.log
