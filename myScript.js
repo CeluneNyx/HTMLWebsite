@@ -83,12 +83,16 @@ function resetForm() {
     fields.forEach(fieldID => {
         clearFieldError(fieldID);
     });
+    clearTimeout(successTimeout);
     document.getElementById("feedbackSuccess").hidden = true;
 }
+
+let successTimeout;
 
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const successMessage = document.getElementById("feedbackSuccess");
+    clearTimeout(successTimeout);
     successMessage.hidden = true;
 
     const fullname = validateFullname();
@@ -98,7 +102,11 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const url = validateURL();
 
     if(fullname && email && topic && comments && url) {
+        resetForm();
         successMessage.hidden = false;
+        successTimeout = setTimeout(() => {
+            successMessage.hidden = true;
+        }, 4000);
     }
 });
 
