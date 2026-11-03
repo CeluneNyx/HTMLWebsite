@@ -48,6 +48,19 @@ function validateComments() {
     return true;
 }
 
+function validateURL() {
+    const website = document.getElementById("website");
+    const value = website.value.trim();
+
+    if (value !== "" && !website.validity.valid) {
+        showFieldError("website", "Please enter a valid URL");
+        return false;
+    } else {
+        clearFieldError("website");
+    }
+    return true;
+}
+
 function showFieldError(fieldID, message) {
     const field = document.getElementById(fieldID);
     const error = document.getElementById(fieldID + "Error");
@@ -79,9 +92,11 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const email = validateEmail();
     const topic = validateTopic();
     const comments = validateComments();
+    const url = validateURL();
 
-    if(fullname && email && topic && comments) {
+    if(fullname && email && topic && comments && url) {
         alert("Form submitted successfully!");
         this.submit();
     }
 });
+
