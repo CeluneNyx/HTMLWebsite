@@ -264,6 +264,15 @@ nav a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.Feedback-Form {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .Form-Group {
   margin-bottom: 1.5rem;
   display: flex;
@@ -309,6 +318,24 @@ nav a {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+
+.Clear-Button {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.85rem;
+  background-color: #6c757d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Clear-Button:hover {
+  background-color: #5a6268;
 }
 
 .Submit-Button:hover {
