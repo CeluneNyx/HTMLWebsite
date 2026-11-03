@@ -242,6 +242,19 @@ nav a {
     align-items: center;
 }
 
+.Feedback h2{
+    font-size: clamp(2rem,  5vw, 3rem);
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Contact-Form {
   max-width: 1600px;
   margin: 0 auto;
