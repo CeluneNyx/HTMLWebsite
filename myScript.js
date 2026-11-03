@@ -39,7 +39,7 @@ function validateTopic() {
 
 function validateComments() {
     const comments = document.getElementById("comments");
-    if(comments.value.length < 15){
+    if(comments.value.trim().length < 15){
         showFieldError("comments", "Comments must be at least 15 characters long");
         return false;
     }
@@ -79,14 +79,17 @@ function clearFieldError(fieldID) {
 }
 
 function resetForm() {
-    const fields = ["name", "email", "topic", "comments", "url"];
+    const fields = ["name", "email", "topic", "comments", "website"];
     fields.forEach(fieldID => {
         clearFieldError(fieldID);
     });
+    document.getElementById("feedbackSuccess").hidden = true;
 }
 
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
     event.preventDefault();
+    const successMessage = document.getElementById("feedbackSuccess");
+    successMessage.hidden = true;
 
     const fullname = validateFullname();
     const email = validateEmail();
@@ -95,8 +98,8 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const url = validateURL();
 
     if(fullname && email && topic && comments && url) {
-        alert("Form submitted successfully!");
-        this.submit();
+        successMessage.hidden = false;
     }
 });
 
+document.getElementById("feedbackForm").addEventListener("reset", resetForm);
