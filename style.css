@@ -420,6 +420,15 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #2f64f7;
+  outline-offset: 2px;
+  border-color: #2f64f7;
 }
 
 .invalid {

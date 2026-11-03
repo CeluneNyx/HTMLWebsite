@@ -1,6 +1,17 @@
 
-function validateFullname() {
-    const fullname = document.getElementById("name").value.trim();
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const topicInput = document.getElementById("topic");
+const commentsInput = document.getElementById("comments");
+const websiteInput = document.getElementById("website");
+const feedbackForm = document.getElementById("feedbackForm");
+const feedbackSuccess = document.getElementById("feedbackSuccess");
+const commentsCounter = document.getElementById("commentsCounter");
+
+let successTimeout;
+
+function validateFullName() {
+    const fullname = nameInput.value.trim();
 
     if (fullname.length < 2) {
         showFieldError("name", "Please enter your full name");
@@ -12,7 +23,7 @@ function validateFullname() {
 }
 
 function validateEmail() {
-    const email = document.getElementById("email").value.trim();
+    const email = emailInput.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -25,10 +36,7 @@ function validateEmail() {
 }
 
 function validateTopic() {
-
-    const topic = document.getElementById("topic");
-
-    if(topic.value === ""){
+    if (topicInput.value === "") {
         showFieldError("topic", "Please select a topic");
         return false;
     }
@@ -38,8 +46,7 @@ function validateTopic() {
 }
 
 function validateComments() {
-    const comments = document.getElementById("comments");
-    if(comments.value.trim().length < 15){
+    if (commentsInput.value.trim().length < 15) {
         showFieldError("comments", "Comments must be at least 15 characters long");
         return false;
     }
@@ -49,24 +56,26 @@ function validateComments() {
 }
 
 function validateURL() {
-    const website = document.getElementById("website");
-    const value = website.value.trim();
+    const value = websiteInput.value.trim();
 
-    if (value !== "" && !website.validity.valid) {
+    if (value !== "" && !websiteInput.validity.valid) {
         showFieldError("website", "Please enter a valid URL");
         return false;
-    } else if (value === "") {
-        clearFieldError("website");
-    } else {
-        markFieldValid("website");
     }
+
+    if (value === "") {
+        clearFieldError("website");
+        return true;
+    }
+
+    markFieldValid("website");
     return true;
 }
 
 function showFieldError(fieldID, message) {
     const field = document.getElementById(fieldID);
     const error = document.getElementById(fieldID + "Error");
-    
+
     field.classList.add("invalid");
     field.classList.remove("valid");
     error.textContent = message;
@@ -95,47 +104,58 @@ function clearFieldError(fieldID) {
 
 function resetForm() {
     const fields = ["name", "email", "topic", "comments", "website"];
-    fields.forEach(fieldID => {
-        clearFieldError(fieldID);
-    });
+    fields.forEach(clearFieldError);
+
+    nameInput.value = "";
+    emailInput.value = "";
+    topicInput.value = "";
+    commentsInput.value = "";
+    websiteInput.value = "";
+
     clearTimeout(successTimeout);
-    document.getElementById("feedbackSuccess").hidden = true;
-    setTimeout(updateCommentsCounter, 0);
+    feedbackSuccess.hidden = true;
+    updateCommentsCounter();
 }
 
 function updateCommentsCounter() {
-    const comments = document.getElementById("comments");
-    const counter = document.getElementById("commentsCounter");
-    const characterCount = comments.value.length;
-    counter.textContent = `${characterCount} characters (15 minimum)`;
-    counter.classList.toggle("below-minimum", characterCount < 15);
-    counter.classList.toggle("meets-minimum", characterCount >= 15);
+    const characterCount = commentsInput.value.length;
+    commentsCounter.textContent = `${characterCount} characters (15 minimum)`;
+    commentsCounter.classList.toggle("below-minimum", characterCount < 15);
+    commentsCounter.classList.toggle("meets-minimum", characterCount >= 15);
 }
 
-document.getElementById("comments").addEventListener("input", updateCommentsCounter);
+commentsInput.addEventListener("input", updateCommentsCounter);
 updateCommentsCounter();
 
-let successTimeout;
-
-document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+feedbackForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    const successMessage = document.getElementById("feedbackSuccess");
     clearTimeout(successTimeout);
-    successMessage.hidden = true;
+    feedbackSuccess.hidden = true;
 
-    const fullname = validateFullname();
+    const fullname = validateFullName();
     const email = validateEmail();
     const topic = validateTopic();
     const comments = validateComments();
     const url = validateURL();
 
-    if(fullname && email && topic && comments && url) {
-        successMessage.textContent = `Thanks for your feedback, ${document.getElementById("name").value.trim()}!`;
-        successMessage.hidden = false;
+    if (fullname && email && topic && comments && url) {
+        feedbackSuccess.textContent = `Thanks for your feedback, ${nameInput.value.trim()}!`;
+        feedbackSuccess.hidden = false;
+
+        nameInput.value = "";
+        emailInput.value = "";
+        topicInput.value = "";
+        commentsInput.value = "";
+        websiteInput.value = "";
+
+        const fields = ["name", "email", "topic", "comments", "website"];
+        fields.forEach(clearFieldError);
+        updateCommentsCounter();
+
         successTimeout = setTimeout(() => {
-            successMessage.hidden = true;
+            feedbackSuccess.hidden = true;
         }, 4000);
     }
 });
 
-document.getElementById("feedbackForm").addEventListener("reset", resetForm);
+feedbackForm.addEventListener("reset", resetForm);
