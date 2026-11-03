@@ -130,6 +130,7 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const url = validateURL();
 
     if(fullname && email && topic && comments && url) {
+        successMessage.textContent = `Thanks for your feedback, ${document.getElementById("name").value.trim()}!`;
         successMessage.hidden = false;
         successTimeout = setTimeout(() => {
             successMessage.hidden = true;
