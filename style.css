@@ -242,18 +242,6 @@ nav a {
     align-items: center;
 }
 
-.Feedback h2{
-    font-size: clamp(2rem,  5vw, 3rem);
-    padding: 8px;
-    box-sizing: border-box;
-    width: 100%;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .Contact-Form {
   max-width: 1600px;
@@ -264,14 +252,6 @@ nav a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.Feedback-Form {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
 .Form-Group {
   margin-bottom: 1.5rem;
@@ -427,3 +407,52 @@ nav a {
   }
 }
 /*End of Restricted Media CSS*/
+
+.field {
+  margin-bottom: 16px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.invalid {
+  border: 2px solid red !important;
+  background-color: #fff1f1;
+}
+
+.error {
+  display: block;
+  color: red;
+  font-size: 0.8rem;
+  min-height: 1.2em;
+  margin-top: 4px;
+}
+
+.Feedback h2{
+    font-size: clamp(2rem,  5vw, 3rem);
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Feedback-Form {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

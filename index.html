@@ -203,11 +203,13 @@
                 <div class="Form-Group">
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="Name" placeholder="Your name" required>
+                    <small class="error" id="fullnameError">Please enter a valid full name.</small>
                 </div>
 
                 <div class="Form-Group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="Email" placeholder="John.Doe@gmail.com" required>
+                    <small class="error" id="emailError">Please enter a valid email address.</small>
                 </div>
 
                 <div class="Form-Group">
@@ -218,16 +220,19 @@
                         <option value="Bug Report">Bug Report</option>
                         <option value="Feature Request">Feature Request</option>
                     </select>
+                    <small class="error" id="topicError">Please select a topic.</small>
                 </div>
 
                 <div class="Form-Group">
                     <label for="message">Comments:</label>
                     <textarea id="message" name="Message" rows="10" placeholder="Write your message here" required></textarea>
+                    <small class="error" id="commentsError">Comments must be at least 15 characters long.</small>
                 </div>
 
                 <div class="Form-Group">
                     <label for="url">WebsiteURL (Optional):</label>
                     <input type="url" id="url" name="URL" placeholder="https://example.com" />
+                    <small class="error" id="urlError">Please enter a valid URL.</small>
                 </div>
 
                 <button type="reset" class="Clear-Button">Clear</button>

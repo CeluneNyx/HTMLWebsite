@@ -1,3 +1,4 @@
+
 function validateFullname(fullname) {
     if (typeof fullname !== 'string') {
         return false;
@@ -36,4 +37,21 @@ function validateComments() {
         return false;
     }
     return true;
+}
+
+function showFieldError(fieldID, message) {
+    const field = document.getElementById(fieldID);
+    const error = document.getElementById(fieldID + "Error");
+    
+    field.classList.add("invalid");
+    error.textContent = message;
+    error.style.display = "block";
+}
+
+function clearFieldError(fieldID) {
+    const field = document.getElementById(fieldID);
+    const error = document.getElementById(fieldID + "Error");
+
+    field.classList.remove("invalid");
+    error.style.display = "none";
 }
