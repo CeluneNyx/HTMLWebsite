@@ -100,7 +100,18 @@ function resetForm() {
     });
     clearTimeout(successTimeout);
     document.getElementById("feedbackSuccess").hidden = true;
+    setTimeout(updateCommentsCounter, 0);
 }
+
+function updateCommentsCounter() {
+    const comments = document.getElementById("comments");
+    const counter = document.getElementById("commentsCounter");
+    const characterCount = comments.value.length;
+    counter.textContent = `${characterCount} ${"characters"}`;
+}
+
+document.getElementById("comments").addEventListener("input", updateCommentsCounter);
+updateCommentsCounter();
 
 let successTimeout;
 

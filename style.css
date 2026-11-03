@@ -440,6 +440,14 @@ textarea {
   margin-top: 4px;
 }
 
+.character-counter {
+  display: block;
+  color: #555;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  text-align: right;
+}
+
 .feedback-success {
   margin-bottom: 12px;
   padding: 12px;
