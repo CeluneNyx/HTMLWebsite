@@ -102,7 +102,7 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const url = validateURL();
 
     if(fullname && email && topic && comments && url) {
-        resetForm();
+        this.reset();
         successMessage.hidden = false;
         successTimeout = setTimeout(() => {
             successMessage.hidden = true;
