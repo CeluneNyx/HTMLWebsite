@@ -18,3 +18,14 @@ function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
+function validateTopic() {
+
+    const topic = document.getElementById("topic");
+
+    if(topic.value === ""){
+        return false;
+    }
+
+    return true;
+}
