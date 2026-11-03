@@ -7,7 +7,7 @@ function validateFullname() {
         return false;
     }
 
-    clearFieldError("name");
+    markFieldValid("name");
     return true;
 }
 
@@ -20,7 +20,7 @@ function validateEmail() {
         return false;
     }
 
-    clearFieldError("email");
+    markFieldValid("email");
     return true;
 }
 
@@ -33,7 +33,7 @@ function validateTopic() {
         return false;
     }
 
-    clearFieldError("topic");
+    markFieldValid("topic");
     return true;
 }
 
@@ -44,7 +44,7 @@ function validateComments() {
         return false;
     }
 
-    clearFieldError("comments");
+    markFieldValid("comments");
     return true;
 }
 
@@ -55,8 +55,10 @@ function validateURL() {
     if (value !== "" && !website.validity.valid) {
         showFieldError("website", "Please enter a valid URL");
         return false;
-    } else {
+    } else if (value === "") {
         clearFieldError("website");
+    } else {
+        markFieldValid("website");
     }
     return true;
 }
@@ -66,8 +68,19 @@ function showFieldError(fieldID, message) {
     const error = document.getElementById(fieldID + "Error");
     
     field.classList.add("invalid");
+    field.classList.remove("valid");
     error.textContent = message;
     error.style.display = "block";
+}
+
+function markFieldValid(fieldID) {
+    const field = document.getElementById(fieldID);
+    const error = document.getElementById(fieldID + "Error");
+
+    field.classList.remove("invalid");
+    field.classList.add("valid");
+    error.textContent = "";
+    error.style.display = "none";
 }
 
 function clearFieldError(fieldID) {
@@ -75,6 +88,8 @@ function clearFieldError(fieldID) {
     const error = document.getElementById(fieldID + "Error");
 
     field.classList.remove("invalid");
+    field.classList.remove("valid");
+    error.textContent = "";
     error.style.display = "none";
 }
 
@@ -102,7 +117,6 @@ document.getElementById("feedbackForm").addEventListener("submit", function(even
     const url = validateURL();
 
     if(fullname && email && topic && comments && url) {
-        this.reset();
         successMessage.hidden = false;
         successTimeout = setTimeout(() => {
             successMessage.hidden = true;

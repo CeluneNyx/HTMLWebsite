@@ -427,6 +427,11 @@ textarea {
   background-color: #fff1f1;
 }
 
+.valid {
+  border: 2px solid #198754;
+  background-color: #d1e7dd;
+}
+
 .error {
   display: block;
   color: red;
