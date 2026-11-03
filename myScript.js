@@ -107,7 +107,9 @@ function updateCommentsCounter() {
     const comments = document.getElementById("comments");
     const counter = document.getElementById("commentsCounter");
     const characterCount = comments.value.length;
-    counter.textContent = `${characterCount} ${"characters"}`;
+    counter.textContent = `${characterCount} characters (15 minimum)`;
+    counter.classList.toggle("below-minimum", characterCount < 15);
+    counter.classList.toggle("meets-minimum", characterCount >= 15);
 }
 
 document.getElementById("comments").addEventListener("input", updateCommentsCounter);
