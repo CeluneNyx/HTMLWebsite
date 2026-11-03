@@ -65,6 +65,13 @@ function clearFieldError(fieldID) {
     error.style.display = "none";
 }
 
+function resetForm() {
+    const fields = ["name", "email", "topic", "comments", "url"];
+    fields.forEach(fieldID => {
+        clearFieldError(fieldID);
+    });
+}
+
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
