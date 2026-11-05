@@ -46,8 +46,8 @@ function validateTopic() {
 }
 
 function validateComments() {
-    if (commentsInput.value.trim().length < 15) {
-        showFieldError("comments", "Comments must be at least 15 characters long");
+    if (commentsInput.value.trim().length < 15 || commentsInput.value.trim().length > 40) {
+        showFieldError("comments", "Comments must be between 15 and 40 characters long");
         return false;
     }
 
